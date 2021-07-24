@@ -137,24 +137,20 @@ old VM Options
 -Dsun.java2d.uiScale.enabled=false
 
 new VM Options
--Xms8192m
--Xmx8192m
+-Xms4096m
+-Xmx4096m
 -Xss64m
 -XX:ReservedCodeCacheSize=512m
 -XX:+UseCompressedOops
 -XX:NewRatio=2
 -Dfile.encoding=UTF-8
--XX:+UseConcMarkSweepGC
 -XX:SoftRefLRUPolicyMSPerMB=250
 -XX:NewSize=512m
 -XX:MaxNewSize=512m
--XX:PermSize=512m
--XX:MaxPermSize=1024m
--XX:ParallelGCThreads=4
+-XX:ParallelGCThreads=8
 -XX:MaxTenuringThreshold=1
 -XX:SurvivorRatio=8
 -XX:+UseCodeCacheFlushing
--XX:+AggressiveOpts
 -XX:+CMSClassUnloadingEnabled
 -XX:+CMSParallelRemarkEnabled
 -XX:CMSInitiatingOccupancyFraction=65
@@ -168,9 +164,7 @@ new VM Options
 -XX:LargePageSizeInBytes=256m
 -XX:+DisableExplicitGC
 -XX:+ExplicitGCInvokesConcurrent
--XX:+PrintGCDetails
 -XX:+PrintFlagsFinal
--XX:+HeapDumpOnOutOfMemoryError
 -XX:+UseAdaptiveGCBoundary
 -XX:CompileThreshold=10000
 -XX:+OptimizeStringConcat
@@ -183,4 +177,4 @@ new VM Options
 -XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
 -XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
 -Dide.no.platform.update=true
-
+-Dsun.java2d.uiScale.enabled=false

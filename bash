@@ -178,3 +178,50 @@ new VM Options
 -XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
 -Dide.no.platform.update=true
 -Dsun.java2d.uiScale.enabled=false
+
+
+#############
+GraalVM building native apps from java:
+1. GraalVM JDK is required
+2. %graalvm_home%\bin\gu install native-image
+3. using Native Tools Command Prompt (cl.exe should be available!)
+4. mvn clean package
+
+plugin used for maven:
+https://www.graalvm.org/reference-manual/native-image/NativeImageMavenPlugin/
+
+    <dependencies>
+		<dependency>
+			<groupId>org.graalvm.sdk</groupId>
+			<artifactId>graal-sdk</artifactId>
+			<version>21.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+    <build>
+        <plugins>
+		<plugin>
+                <groupId>org.graalvm.nativeimage</groupId>
+                <artifactId>native-image-maven-plugin</artifactId>
+                <version>20.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>native-image</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>false</skip>
+                    <imageName>example</imageName>
+					   <mainClass>org.example.App</mainClass>
+                    <buildArgs>
+                        --no-fallback
+                    </buildArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+##################

@@ -106,6 +106,10 @@ Disable GNOME CTRL+ALFT+LEFT/RIGHT hotkeys for switching the desktops
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['']"
 
+Speed up the cursor:
+
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 20
+gsettings set org.gnome.desktop.peripherals.keyboard delay 300
 
 IntellijIdea:
 IntellijIdea reset trial:

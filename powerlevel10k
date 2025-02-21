@@ -1,2 +1,8 @@
 https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#homebrew
 https://github.com/eza-community/eza
+brew install zsh-completions (autocompletion)
+
+Add to ~/.zshrc to enable compdef
+fpath+=/usr/local/share/zsh-completions
+autoload -Uz compinit && compinit
+

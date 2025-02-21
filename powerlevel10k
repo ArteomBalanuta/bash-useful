@@ -6,3 +6,4 @@ Add to ~/.zshrc to enable compdef
 fpath+=/usr/local/share/zsh-completions
 autoload -Uz compinit && compinit
 
+sendme
